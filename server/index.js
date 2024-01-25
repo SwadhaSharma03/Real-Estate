@@ -1,3 +1,4 @@
+// import path from path;
 import express from 'express';
 import dotenv from 'dotenv';
 import cookieParser from 'cookie-parser';
@@ -20,3 +21,10 @@ app.listen(PORT, ()=> {
 
 app.use('/api/user', userRoute)
 app.use("/api/residency", residencyRoute)
+
+// //static files
+// app.use(express.static(path.join(__dirname,'../client/build')))
+
+// app.get('*',function(req,res){
+//   res.sendFile(path.join(__dirname,"../client/build/index.html"))
+// })

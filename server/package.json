@@ -5,7 +5,10 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "start": "nodemon index.js",
+    "start": "node index.js",
+    "server": "nodemon index.js",
+    "client": "npm start --prefix ../client ",
+    "dev": "concurrently \"yarn start\" \"yarn run client\"",
     "postinstall": "prisma generate"
   },
   "dependencies": {
@@ -18,5 +21,8 @@
     "express-oauth2-jwt-bearer": "^1.5.0",
     "nodemon": "^2.0.22",
     "prisma": "^4.16.2"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
   }
 }
